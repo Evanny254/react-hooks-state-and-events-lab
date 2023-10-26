@@ -5,12 +5,12 @@ function Item({ name, category }) {
   function toggleCartStatus() {
     setInCart((prevInCart) => !prevInCart);
   }
-
+  const buttonClass = inCart ? "remove" : "add";
   return (
     <li className={inCart ? "in-cart" : ""}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="Toggle" onClick={toggleCartStatus}>
+      <button className={buttonClass} onClick={toggleCartStatus}>
         {inCart ? "Remove From Cart" : "Add to Cart"}
       </button>
     </li>
